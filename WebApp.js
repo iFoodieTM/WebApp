@@ -1,26 +1,49 @@
-window.onload = cargar;
+$(document).ready(function()
+{
+    url_base = "http://localhost:8888/Rick/clase-laravel/public/index.php";
 
-    function cargar(){
-      document.getElementById("btn btn-default").onclick = register_user;
-    } 
+    $("#button").click(function(){
+      //e.preventDefault();
+        login();
+    });
+});
+// window.onload = cargar;
 
-    function register_user(){
-        var URL = "http://localhost:8888/Rick/Password/public/index.php/api/login";
-        var email = document.getElementById("nombre").value;
-        var password = document.getElementById("clave").value;
-        var user_data = {'email':email, 'password':password};
-console.log(user_data);
-     $.ajax({
-        url: URL,
-        type: 'POST',
-        data: user_data,
-        datatype: 'json',
-        success: function(response){
-          alert(response.token);
-          sessionStorage.setItem('token', response.token);
-      }
-      }).done(function(){
-        alert("información correcta")
-        console.log("5")
-      });
+//     function cargar() 
+//     {
+//         document.getElementById("btn").onclick = register;
+//     }
+    
+
+    function get_user() 
+    {
+        var email = $('#email').val();
+        var password = $('#password').val();
+
+        var data_user = {
+            "email":email,
+            "password":password
+        }
+        return data_user;
+    }
+
+    function login() 
+    {
+        var data = get_user();
+        
+        $.ajax({
+            url: url_base + "/api/login",
+            type: 'POST',
+            data: data,
+            dataType: 'json',
+            success: function(response){
+                console.log(response.token);
+                sessionStorage.setItem('token', response.token);
+                location.href = "welcome.html";
+            },
+
+            error: function() {
+                    alert("la informacion es incorrecta");
+                 }
+          });
     }

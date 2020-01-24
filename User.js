@@ -6,9 +6,13 @@ $(document).ready(function()
         login();
     });
 
-    $("#show").ready(function(){
-        login();
+    $("#buttonD").click(function(){
+        DeleteUser();
     });
+
+    // $("#show").ready(function(){
+    //     Show();
+    // });
 });   
 
     function get_user() 
@@ -29,7 +33,7 @@ $(document).ready(function()
         return data_user;
     }
 
-    function recover() 
+    function Delete() 
     {
         var email = $('#email').val();
 
@@ -60,33 +64,18 @@ $(document).ready(function()
           });
     }
 
-    function login() 
+    function DeleteUser() 
     {
-        var data = recover();
+        var data = Delete();
         
         $.ajax({
-            url: url_base + "/api/recoverPassword",
-            type: 'POST',
+            url: url_base + "/api/users/{user}",
+            type: 'DELETE',
             data: data,
             dataType: 'json',
             success: function(){
+                //console.log("borrado");
                 location.href = "welcome.html";
-            },
-
-            error: function() {
-                    alert("la informacion es incorrecta");
-                 }
-          });
-    }
-
-    function login() 
-    {      
-        $.ajax({
-            url: url_base + "/api/users/{user}",
-            type: 'GET',
-            dataType: 'json',
-            success: function(response){
-                JSON.parse(response);
             },
 
             error: function() {

@@ -11,27 +11,40 @@
   <div class="container">
 
         <div class="row">
-          <div class="col-lg-4">
+          <div class="col-lg-3">
           </div>
           <div class="col-lg-4">
-                <h1>iFoodie WebApp</h1>
+                <h1 class="tituloL">iFoodie</h1>
                 <div class="container">
                         <form role="form">
+                          <div class="caja">
+                            <div>
+                              <h3>Login</h3>
+                            </div>
                           <div class="form-group"> 
                             <label for="nombre">Ingrese su nombre:</label> <br>
                             <input type="text" class="form-control" id="email">
                           </div> 
+                          <div class="form-group">
+                            <label id="empty" style="display: none">Este campo no pude estar vacio</label>
+                         </div>
                           <div class="form-group"> 
                             <label for="clave">Ingrese su clave:</label>
                             <input type="password" class="form-control" id="password">
-                          </div> 
+                          </div>
+                          <div class="form-group">
+                            <label id="emptyP" style="display: none">Este campo no pude estar vacio</label>
+                         </div> 
+                          <div class="form-group">
+                             <label id="authorized" style="display: none">No estas autorizado</label>
+                          </div>
                           <button type="button" id="button">Enviar</button> 
-                          
+                        </div>
                         </form>
                     
                       </div>
           </div>
-          <div class="col-lg-4">
+          <div class="col-lg-3">
           </div>
         </div>
     

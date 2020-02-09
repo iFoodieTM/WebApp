@@ -1,6 +1,6 @@
 $(document).ready(function()
 {
-    url_base = "http://localhost:8888/Rick/clase-laravel/public/index.php";
+    url_base = "http://localhost/ApiiFoodie/public/index.php";
 
     $("#button").click(function(){
       //e.preventDefault();
@@ -30,20 +30,38 @@ $(document).ready(function()
     function login() 
     {
         var data = get_user();
-        
+
         $.ajax({
             url: url_base + "/api/login",
             type: 'POST',
             data: data,
             dataType: 'json',
             success: function(response){
-                console.log(response.token);
+                if (response.rol == 3) {
                 sessionStorage.setItem('token', response.token);
                 location.href = "welcome.html";
+                } else {
+                    document.getElementById('authorized').style.display = 'block';
+                    document.getElementById('emptyP').style.display = 'none';
+                    document.getElementById('empty').style.display = 'none';
+                }
+                
             },
 
             error: function() {
-                    alert("la informacion es incorrecta");
-                 }
+                if ($('#email').val().length == 0) {
+                    document.getElementById('empty').style.display = 'block';
+                }
+                
+                if ($('#password').val().length == 0){
+                    document.getElementById('emptyP').style.display = 'block';
+                } 
+                if($('#email').val().length != 0 && $('#password').val().length != 0) {
+                    document.getElementById('emptyP').style.display = 'none';
+                    document.getElementById('empty').style.display = 'none';
+                    document.getElementById('authorized').style.display = 'none';
+                    alert("El email o la contraseña son incorrectos");
+                }             
+            }
           });
     }

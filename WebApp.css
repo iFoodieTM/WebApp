@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700&display=swap');
+
+body {
+   background-image: url("FondoWebApp.png");
+   background-size: cover;
+}
+
 .container form {
    margin-top: 30%;
 }
@@ -13,5 +20,63 @@
    margin-bottom: -8px!important;
 }
 
+#authorized, #empty, #emptyP {
+   color: red;
+}
+
+.nav-item {
+   margin-left: 25px;
+}
+
+h1 {
+   font-size: 100px;
+   color: #006B60;
+   font-family: Rajdhani, sans-serif;
+}
+
+.tituloL {
+   margin-left: 100px;
+}
+
+.container {
+   margin-top: 20px;
+}
+
+.caja {
+   background-color: rgba(255, 216, 132, 0.5);
+   border-color: #006B60;
+   border-width: 10px;
+   border-style: solid;
+   padding: 15% 10px 10px 10px;
+   width: 500px;
+   height: 500px;
+   border-radius: 5%; 
+}
+
+#button {
+   margin-left: 35%;
+   margin-top: 5%;
+   background-color: #F9A50C;
+   border-style: solid;
+   border-color: #006B60;
+   border-width: 7px;
+   width: 150px;
+   height: 60px;
+   border-radius: 10%;
+   color: white;
+   font-size: 20px;
+}
+
+h3 {
+   font-size: 60px;
+   color: #006B60;
+   font-family: Rajdhani, sans-serif;
+   margin-left: 35%;
+   margin-bottom: 20px;
+}
+
+#barra {
+   background-color: #006B60!important;
+}
 
 

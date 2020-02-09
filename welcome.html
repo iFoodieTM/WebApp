@@ -8,238 +8,31 @@
 </head> 
 <body> 
 
+        <nav class="navbar navbar-expand-sm" id="barra">
+                <a href="#" class="navbar-brand"><img src=""></a>
+                    <ul class="navbar-nav ml-auto">   
+                        <li class="nav-item" id="navegacion"><a href="ShowUser.html" class="nav-link">Usuario</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Restaurantes</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Recetas</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Categorias</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Comentarios</a></li>
+                    </ul>     
+            </nav>
+
   <div class="container">
 
-        <div class="row">
-            <div class="col-lg-4">
-            </div>
-            <div class="col-lg-4"> 
-                <h1>Menu principal</h1>               
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-6"> 
-                        <div class="row">
-                                <div class="col-lg-12">
-                                        <h2 class="tituloCategoria">Usuario</h2>
-                                </div>
-                        </div>      
-                        <div class="row">
-                                <div class="col-lg-4">
-                                        <a href="AddUser.html"><input type="button" value="Crear ususario"/></a>
-                                </div>
-                                <div class="col-lg-8">
-                                        <span>Crea un nuevo usuario para la aplicacion</span>     
-                                </div>
-                        </div>                        
-            </div>
-            <div class="col-lg-6"> 
-                        <div class="row">
-                                <div class="col-lg-12">
-                                        <h2 class="tituloCategoria">Restaurantes</h2>
-                                </div>
-                        </div>  
-                <div class="row">
-                        <div class="col-lg-4">
-                                <input type="button" value="Borrar Restaurantes"/>
-                        </div>
-                        <div class="col-lg-8">
-                                <span>Borrar perfil de un Restaurante</span>     
-                        </div>
-                </div>                        
-            </div>
-        </div>
-        <div class="row last">
-            <div class="col-lg-6"> 
-                <div class="row">
-                        <div class="col-lg-4">
-                                <a href="DeleteUser.html"><input type="button" value="Borrar ususario"/></a>
-                        </div>
-                        <div class="col-lg-8">
-                                <span>Borrar el perfil de un usario</span>     
-                        </div>
-                </div>                        
-            </div>
-            <div class="col-lg-6"> 
-                <div class="row">
-                        <div class="col-lg-4">
-                                <input type="button" value="Mostrar Restaurantes"/>
-                        </div>
-                        <div class="col-lg-8">
-                                <span>Muestra un listado con la informacion de los Restaurantes</span>     
-                        </div>
-                </div>                        
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-6"> 
-                <div class="row">
-                        <div class="col-lg-4">
-                                <a href="ShowUser.html"><input type="button" value="Mostrar ususario"/></a>
-                        </div>
-                        <div class="col-lg-8">
-                                <span>Mostrar una lista con la informacion de los usuarios</span>     
-                        </div>
-                </div>                        
-            </div>
-            <div class="col-lg-6"> 
-                <div class="row">
-                        <div class="col-lg-4">
-                        </div>
-                        <div class="col-lg-8">    
-                        </div>
-                </div>                        
-            </div>
-        </div>
-
-        <div class="row">
-                <div class="col-lg-6">
-                        <div class="row">
-                                <div class="col-lg-12">
-                                        <h2 class="tituloCategoria">Recetas</h2>
-                                </div>
-                        </div> 
-                        <div class="row">
-                                <div class="col-lg-4">
-                                        <input type="button" value="Borrar Recetas"/>
-                                </div>
-                                <div class="col-lg-8">
-                                        <span>Borra las recetas de la base de datos</span>     
-                                </div>
-                        </div>                        
+        <div class="row" id="titulo">
+                <div class="col-lg-4">
                 </div>
-                <div class="col-lg-6">
-                        <div class="row">
-                                <div class="col-lg-12">
-                                        <h2 class="tituloCategoria">Comentarios</h2>
-                                </div>
-                        </div> 
-                        <div class="row">
-                                <div class="col-lg-4">
-                                        <input type="button" value="Anadir comentarios"/>
-                                </div>
-                                <div class="col-lg-8">
-                                        <span>Anade comentarios a las recetas</span>     
-                                </div>
-                        </div>                        
+                <div class="col-lg-4">
+                        <h1><strong>iFoodie</strong></h1>
                 </div>
         </div>
 
         <div class="row">
-                <div class="col-lg-6"> 
-                        <div class="row">
-                                <div class="col-lg-4">
-                                </div>
-                                <div class="col-lg-8">   
-                                </div>
-                        </div>                        
-                </div>
-                <div class="col-lg-6"> 
-                        <div class="row">
-                                <div class="col-lg-4">
-                                        <input type="button" value="Borrar comentarios"/>
-                                </div>
-                                <div class="col-lg-8">
-                                        <span>Borrar comentarios de las recetas</span>     
-                                </div>
-                        </div>                        
-                </div>
-        </div>
-
-        <div class="row">
-                <div class="col-lg-6"> 
-                        <div class="row">
-                                <div class="col-lg-12">
-                                        <h2 class="tituloCategoria">Categorias</h2>
-                                </div>
-                        </div>
-                        <div class="row">
-                                <div class="col-lg-4">
-                                        <input type="button" value="Crear categoria"/>
-                                </div>
-                                <div class="col-lg-8"> 
-                                        <span>Anadir categoria a la base datos</span>   
-                                </div>
-                        </div>                        
-                </div>
-                <div class="col-lg-6"> 
-                        <div class="row">
-                                <div class="col-lg-12">
-                                        <h2 class="tituloCategoria">Tags</h2>
-                                </div>
-                        </div>
-                        <div class="row">
-                                <div class="col-lg-4">
-                                        <input type="button" value="Borrar tag"/>
-                                </div>
-                                <div class="col-lg-8">
-                                        <span>Borrar tags de la base de datos</span>     
-                                </div>
-                        </div>                        
-                </div>
-        </div>
-
-        <div class="row">
-                <div class="col-lg-6"> 
-                        <div class="row">
-                                <div class="col-lg-4">
-                                        <input type="button" value="Editar categoria"/>
-                                </div>
-                                <div class="col-lg-8"> 
-                                        <span>Editar una categoria de la base datos</span>   
-                                </div>
-                        </div>                        
-                </div>
-                <div class="col-lg-6">
-                        <div class="row">
-                                <div class="col-lg-4">
-                                        <input type="button" value="Mostrar Tags"/>
-                                </div>
-                                <div class="col-lg-8">
-                                        <span>Mostrar un listado de los tags disponibles</span>   
-                                </div>
-                        </div>                        
-                </div>
-        </div>
-        <div class="row">
-                <div class="col-lg-6"> 
-                        <div class="row">
-                                <div class="col-lg-4">
-                                        <input type="button" value="Borrar categoria"/>
-                                </div>
-                                <div class="col-lg-8"> 
-                                        <span>Borrar una categoria de la base datos</span>   
-                                </div>
-                        </div>                        
-                </div>
-                <div class="col-lg-6"> 
-                        <div class="row">
-                                <div class="col-lg-4">
-                                </div>
-                                <div class="col-lg-8">
-                                </div>
-                        </div>                        
-                </div>
-        </div>
-
-        <div class="row">
-                <div class="col-lg-6"> 
-                        <div class="row">
-                                <div class="col-lg-4">
-                                        <input type="button" value="Mostrar categorias"/>
-                                </div>
-                                <div class="col-lg-8"> 
-                                        <span>Mostrar un listado con todas las categorias</span>   
-                                </div>
-                        </div>                        
-                </div>
-                <div class="col-lg-6"> 
-                        <div class="row">
-                                <div class="col-lg-4">
-                                </div>
-                                <div class="col-lg-8">
-                                </div>
-                        </div>                        
+                <div class="col-lg-3"></div>
+                <img src="LogoMediano.png">
+                <div class="col-lg-4">
                 </div>
         </div>
     

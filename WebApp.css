@@ -79,4 +79,17 @@ h3 {
    background-color: #006B60!important;
 }
 
+#Add {
+   background-color: #F9A50C;
+   border-style: solid;
+   border-color: #006B60;
+   border-width: 7px;
+   width: 150px;
+   height: 60px;
+   border-radius: 10%;
+   color: white;
+   font-size: 20px;
+   /*position: absolute;*/
+}
+
 

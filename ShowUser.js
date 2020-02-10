@@ -3,7 +3,7 @@ var row;
 
 $(document).ready(function()
 {
-    url_base = "http://localhost/ApiiFoodie/public/index.php";
+    url_base = "http://localhost:8888/Victor/ApiiFoodie/public/index.php";
     
     $("#show").ready(function(){
              Show();
@@ -13,7 +13,7 @@ $(document).ready(function()
 function Show() 
     {      
         $.ajax({
-            url: url_base + "api/show",
+            url: url_base + "/api/show",
             type: 'GET',
             dataType: 'json',
             headers: {
@@ -70,9 +70,8 @@ function Show()
             //columna email
             var column = document.createElement('td');
             var text = document.createTextNode(user.email);           
-            column.setAttribute("value","userEmail" + count
-            );            
-            column.setAttribute("id","userEmail");
+            column.setAttribute("value",user.email);            
+            column.setAttribute("id","userEmail" + count);
             column.appendChild(text);
             //metemos la columna en la fila
             row.appendChild(column);
@@ -95,8 +94,9 @@ function Show()
             var column3 = document.createElement("button")
                 column3.innerHTML = "Eliminar";
                 column3.setAttribute("type", "button");
+                column3.setAttribute("value", "userEmail" + count)
                 column3.setAttribute("class", "DeleteId" + count);
-                //column3.setAttribute('onclick', 'DeleteUser()');    
+                column3.setAttribute('onclick', 'DeleteUser(this)');    
         
             //metemos la fila en la tabla
             document.getElementById("userTable").appendChild(row);
@@ -116,24 +116,28 @@ function Show()
         location.href = "AddUser.html";
     }
 
-    function Delete() 
+    function Delete(email) 
     {
         
         
         //var email = alert($(this).closest('#fila').find('#userEmail').innerHTML);
-        console.log(email);
-
         
-
+        console.log(email);
         var data_user = {
             "email":email,
         }
         return data_user;
     }
 
-    function DeleteUser() {
-        var data = Delete();
+    function DeleteUser(buttonDelete) {
         
+        var idColumnEmail = ''+buttonDelete.value;
+        console.log(idColumnEmail)
+        var email = document.getElementById(idColumnEmail).innerText;
+        //var email = $(idColumnEmail);
+
+        console.log(email);
+        var data = Delete(email);
         $.ajax({
             url: url_base + "/api/delete",
             type: 'DELETE',
@@ -145,6 +149,7 @@ function Show()
             success: function(){
                 //console.log("borrado");
                 alert("Usuario borrado correctamente");
+                location.reload();
             },
 
             error: function() {

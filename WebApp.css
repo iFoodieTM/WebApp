@@ -28,6 +28,10 @@ body {
    margin-left: 25px;
 }
 
+.nav-link {
+   color: white;  
+}
+
 h1 {
    font-size: 100px;
    color: #006B60;
@@ -83,13 +87,38 @@ h3 {
    background-color: #F9A50C;
    border-style: solid;
    border-color: #006B60;
-   border-width: 7px;
-   width: 150px;
-   height: 60px;
-   border-radius: 10%;
+   border-width: 5px;
+   width: 70px;
+   height: 40px;
+   border-radius: 15%;
    color: white;
-   font-size: 20px;
+   font-size: 15px;
+   margin-left: 85%; 
    /*position: absolute;*/
 }
+
+#ButtonDelete {
+   background-image: url("trash.png");
+   width: 32px;
+   height: 32px;
+   background-color: rgba(249, 166, 12, 0);
+   border-color: rgba(0, 107, 96, 0);
+   /*padding: 10px;*/
+   margin-top: 7px;
+   background-repeat: no-repeat;
+}
+#ButtonEdit {
+   background-image: url("edit.png");
+   width: 32px;
+   height: 32px;
+   background-color: rgba(249, 166, 12, 0);
+   border-color: rgba(0, 107, 96, 0);
+   /*padding: 10px;*/
+   margin-top: 7px;
+   margin-right: 20px;
+   background-repeat: no-repeat;
+}
+
+
 
 

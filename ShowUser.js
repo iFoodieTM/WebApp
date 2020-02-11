@@ -86,14 +86,16 @@ function Show()
             row.appendChild(column);
 
             var column2 = document.createElement("button")
-                column2.innerHTML = "Editar";
+                //column2.innerHTML = "Editar";
+                column2.setAttribute("id", "ButtonEdit");
                 column2.setAttribute("type", "button");
-                column2.setAttribute("id", "EditId" + count);
+                column2.setAttribute("class", "EditId" + count);
                 column2.setAttribute('onclick', 'EditUser()');
 
             var column3 = document.createElement("button")
-                column3.innerHTML = "Eliminar";
+                //column3.innerHTML = "Eliminar";
                 column3.setAttribute("type", "button");
+                column3.setAttribute("id", "ButtonDelete");
                 column3.setAttribute("value", "userEmail" + count)
                 column3.setAttribute("class", "DeleteId" + count);
                 column3.setAttribute('onclick', 'DeleteUser(this)');    

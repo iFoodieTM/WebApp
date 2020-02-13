@@ -152,8 +152,8 @@ function Show()
         user.rol = document.getElementById(idRol).innerText;
         user.photo = document.getElementById(idPhoto).innerText;
         
-        console.log(user);
-        localStorage.setItem('user', user);
+        console.log(JSON.stringify(user));
+        localStorage.setItem('user', JSON.stringify(user));
         location.href = "EditUser.html";
     }
 

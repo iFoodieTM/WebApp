@@ -9,7 +9,14 @@ $(document).ready(function()
 }); 
 
 function getUser () {
+    /*
     var user =  localStorage.getItem('user');
     var token = sessionStorage.getItem('token');
     console.log(user);
+    */
+
+   var user =  localStorage.getItem('user');
+   var obj = JSON.parse(user);
+   console.log(obj.id)
+   $("#name").text = obj.name;
 }

@@ -8,7 +8,17 @@ $(document).ready(function()
     $("#show").ready(function(){
              Show();
     });
-});   
+
+    $("#Add").click(function(){
+        location.href = "AddUser.html";
+    })
+    
+
+}); 
+
+document.onchange = function(){
+    doSearch();
+}
 
 function Show() 
     {      
@@ -43,7 +53,7 @@ function Show()
             //columna id
             var column = document.createElement('td');
             var text = document.createTextNode(user.id);            
-            column.setAttribute("value","userId");            
+            column.setAttribute("value",user.id);            
             column.setAttribute("id","userId"+count);
             column.appendChild(text);
             //metemos la columna en la fila
@@ -52,7 +62,7 @@ function Show()
             //columna name
             var column = document.createElement('td');
             var text = document.createTextNode(user.name);            
-            column.setAttribute("value","userName");            
+            column.setAttribute("value",user.name);            
             column.setAttribute("id","userName"+count);
             column.appendChild(text);
             //metemos la columna en la fila
@@ -61,7 +71,7 @@ function Show()
             //columna user name
             var column = document.createElement('td');
             var text = document.createTextNode(user.user_name);            
-            column.setAttribute("value","userUserName");            
+            column.setAttribute("value",user.user_name);            
             column.setAttribute("id","userUserName"+count);
             column.appendChild(text);
             //metemos la columna en la fila
@@ -76,10 +86,19 @@ function Show()
             //metemos la columna en la fila
             row.appendChild(column);
 
+             //columna photo
+             var column = document.createElement('td');
+             var text = document.createTextNode(user.rol);            
+             column.setAttribute("value",user.rol);            
+             column.setAttribute("id","userRol"+count);
+             column.appendChild(text);
+             //metemos la columna en la fila
+             row.appendChild(column);
+
             //columna photo
             var column = document.createElement('td');
             var text = document.createTextNode(user.photo);            
-            column.setAttribute("value","userPhoto");            
+            column.setAttribute("value",user.photo);            
             column.setAttribute("id","userPhoto"+count);
             column.appendChild(text);
             //metemos la columna en la fila
@@ -89,14 +108,15 @@ function Show()
                 //column2.innerHTML = "Editar";
                 column2.setAttribute("id", "ButtonEdit");
                 column2.setAttribute("type", "button");
+                column2.setAttribute("value", count);
                 column2.setAttribute("class", "EditId" + count);
-                column2.setAttribute('onclick', 'EditUser()');
+                column2.setAttribute('onclick', 'EditUser(this)');
 
             var column3 = document.createElement("button")
                 //column3.innerHTML = "Eliminar";
                 column3.setAttribute("type", "button");
                 column3.setAttribute("id", "ButtonDelete");
-                column3.setAttribute("value", "userEmail" + count)
+                column3.setAttribute("value", count);
                 column3.setAttribute("class", "DeleteId" + count);
                 column3.setAttribute('onclick', 'DeleteUser(this)');    
         
@@ -114,8 +134,27 @@ function Show()
         });
     }
 
-    function EditUser () {
-        location.href = "AddUser.html";
+    function EditUser (Editbutton) {
+
+        var user = new Object();
+        
+        var idID = 'userId'+Editbutton.value;
+        var idName = 'userName'+ Editbutton.value;
+        var idUser_name = 'userUserName' + Editbutton.value;
+        var idEmail = 'userEmail' + Editbutton.value;
+        var idRol = 'userRol' + Editbutton.value;
+        var idPhoto = 'userPhoto' + Editbutton.value;
+
+        user.id = document.getElementById(idID).innerText;
+        user.name = document.getElementById(idName).innerText;
+        user.username = document.getElementById(idUser_name).innerText;
+        user.email = document.getElementById(idEmail).innerText;
+        user.rol = document.getElementById(idRol).innerText;
+        user.photo = document.getElementById(idPhoto).innerText;
+        
+        console.log(user);
+        localStorage.setItem('user', user);
+        location.href = "EditUser.html";
     }
 
     function Delete(email) 
@@ -133,7 +172,7 @@ function Show()
 
     function DeleteUser(buttonDelete) {
         
-        var idColumnEmail = ''+buttonDelete.value;
+        var idColumnEmail = 'userEmail'+buttonDelete.value;
         console.log(idColumnEmail)
         var email = document.getElementById(idColumnEmail).innerText;
         //var email = $(idColumnEmail);
@@ -158,4 +197,25 @@ function Show()
                     alert("Algo ha ido mal");
                  }
           });
+    }
+
+
+    function doSearch() {
+        var tableReg = document.getElementById('table');
+        var searchText = document.getElementById('searchTerm').value.toLowerCase();
+        for (var i = 1; i < tableReg.rows.length; i++) {
+            var cellsOfRow = tableReg.rows[i].getElementsByTagName('td');
+            var found = false;
+            for (var j = 0; j < cellsOfRow.length && !found; j++) {
+                var compareWith = cellsOfRow[j].innerHTML.toLowerCase();
+                if (searchText.length == 0 || (compareWith.indexOf(searchText) > -1)) {
+                    found = true;
+                }
+            }
+            if (found) {
+                tableReg.rows[i].style.display = '';
+            } else {
+                tableReg.rows[i].style.display = 'none';
+            }
+        }
     }

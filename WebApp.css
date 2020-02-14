@@ -6,7 +6,7 @@ body {
 }
 
 .container form {
-   margin-top: 30%;
+   margin-top: 10%;
 }
 .tituloCategoria{ 
    text-align: center;
@@ -66,7 +66,7 @@ h1 {
    border-width: 7px;
    width: 150px;
    height: 60px;
-   border-radius: 10%;
+   border-radius: 10px;
    color: white;
    font-size: 20px;
 }
@@ -99,8 +99,8 @@ h3 {
 
 #ButtonDelete {
    background-image: url("trash.png");
-   width: 32px;
-   height: 32px;
+   width: 35px;
+   height: 35px;
    background-color: rgba(249, 166, 12, 0);
    border-color: rgba(0, 107, 96, 0);
    padding: 10px;
@@ -109,13 +109,25 @@ h3 {
 }
 #ButtonEdit {
    background-image: url("edit.png");
-   width: 32px;
-   height: 32px;
+   width: 35px;
+   height: 35px;
    background-color: rgba(249, 166, 12, 0);
    border-color: rgba(0, 107, 96, 0);
    padding: 10px;
    margin-top: 7px;
-   margin-right: 20px;
+   margin-right: 10px;
+   background-repeat: no-repeat;
+}
+
+#ButtonBanned {
+   /*background-image: url("ban.png");*/
+   width: 35px;
+   height: 35px;
+   background-color: rgba(249, 166, 12, 0);
+   border-color: rgba(0, 107, 96, 0);
+   padding: 10px;
+   margin-top: 7px;
+   margin-right: 10px;
    background-repeat: no-repeat;
 }
 
@@ -124,6 +136,44 @@ h3 {
    border-radius: 10px;
 }
 
+.EmailE {
+   width: 100%;
+}
 
+#search {
+   position: absolute;
+   margin-top: 2%;
+   margin-left: 5%;
+}
 
+#Lsearch {
+   margin-right: 15px;
+   font-family: Rajdhani, sans-serif;
+   color: #006B60;
+   font-size: 20px;
+}
 
+#searchTerm {
+   border: none;
+   border-bottom: 1px solid #006B60;
+   background-color: rgba(255, 255, 255, 0);
+}
+
+#buttonBack {
+   background-color: rgba(0, 107, 96, 0);
+   border-color: rgba(0, 107, 96, 0);
+   width: 40px;
+   height: 40px;
+   background: no-repeat;
+   margin-top: 2%;
+   margin-left: 5%;
+}
+
+#EditForm {
+   border-radius: 20px;
+   padding: 3%;
+   background-color: rgba(255, 216, 132, 0.5);
+   border-color: #006B60;
+   border-width: 10px;
+   border-style: solid;
+}

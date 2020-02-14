@@ -7,6 +7,7 @@ $(document).ready(function()
     
     $("#show").ready(function(){
              Show();
+             
     });
 
     $("#Add").click(function(){
@@ -23,7 +24,7 @@ document.onchange = function(){
 function Show() 
     {      
         $.ajax({
-            url: url_base + "/api/show",
+            url: url_base + "/api/users/asd",
             type: 'GET',
             dataType: 'json',
             headers: {
@@ -104,6 +105,14 @@ function Show()
             //metemos la columna en la fila
             row.appendChild(column);
 
+            var column = document.createElement('td');
+             var text = document.createTextNode(user.banned);            
+             column.setAttribute("value",user.banned);            
+             column.setAttribute("id","userBan"+count);
+             column.appendChild(text);
+             //metemos la columna en la fila
+             row.appendChild(column);
+
             var column2 = document.createElement("button")
                 //column2.innerHTML = "Editar";
                 column2.setAttribute("id", "ButtonEdit");
@@ -112,17 +121,32 @@ function Show()
                 column2.setAttribute("class", "EditId" + count);
                 column2.setAttribute('onclick', 'EditUser(this)');
 
+            var column4 = document.createElement("button")
+                //column2.innerHTML = "Editar";
+                column4.setAttribute("id", "ButtonBanned");
+                column4.setAttribute("type", "button");
+                column4.setAttribute("value", count);
+                column4.setAttribute("class", "BannedId" + count);
+                column4.setAttribute('onclick', 'BanUser(this)');  
+                if(user.banned == 0) {
+                    column4.style.backgroundImage = 'url(ban.png)';
+                }  else {
+                    column4.style.backgroundImage = 'url(unban.png)';
+                }
+
             var column3 = document.createElement("button")
                 //column3.innerHTML = "Eliminar";
                 column3.setAttribute("type", "button");
                 column3.setAttribute("id", "ButtonDelete");
                 column3.setAttribute("value", count);
                 column3.setAttribute("class", "DeleteId" + count);
-                column3.setAttribute('onclick', 'DeleteUser(this)');    
+                column3.setAttribute('onclick', 'DeleteUser(this)'); 
+
         
             //metemos la fila en la tabla
             document.getElementById("userTable").appendChild(row);
             row.appendChild(column2);
+            row.appendChild(column4);
             row.appendChild(column3);
             count++;
 
@@ -138,18 +162,14 @@ function Show()
 
         var user = new Object();
         
-        var idID = 'userId'+Editbutton.value;
         var idName = 'userName'+ Editbutton.value;
         var idUser_name = 'userUserName' + Editbutton.value;
         var idEmail = 'userEmail' + Editbutton.value;
-        var idRol = 'userRol' + Editbutton.value;
         var idPhoto = 'userPhoto' + Editbutton.value;
 
-        user.id = document.getElementById(idID).innerText;
         user.name = document.getElementById(idName).innerText;
         user.username = document.getElementById(idUser_name).innerText;
         user.email = document.getElementById(idEmail).innerText;
-        user.rol = document.getElementById(idRol).innerText;
         user.photo = document.getElementById(idPhoto).innerText;
         
         console.log(JSON.stringify(user));
@@ -159,11 +179,7 @@ function Show()
 
     function Delete(email) 
     {
-        
-        
-        //var email = alert($(this).closest('#fila').find('#userEmail').innerHTML);
-        
-        console.log(email);
+        //console.log(email);
         var data_user = {
             "email":email,
         }
@@ -190,6 +206,41 @@ function Show()
             success: function(){
                 //console.log("borrado");
                 alert("Usuario borrado correctamente");
+                location.reload();
+            },
+
+            error: function() {
+                    alert("Algo ha ido mal");
+                 }
+          });
+    }
+
+    function BanUser(ButtonBanned) {
+        
+        var idColumnEmail = 'userEmail'+ButtonBanned.value;
+        console.log(idColumnEmail)
+        var email = document.getElementById(idColumnEmail).innerText;
+        var idBan = 'userBan'+ButtonBanned.value;
+        var ban = document.getElementById(idBan).innerText;
+        //var email = $(idColumnEmail);
+        if (ban == 0) {
+            var urlEnd = "/api/ban";
+        } else {
+            var urlEnd = "/api/unban";
+        }
+
+        //console.log(email);
+        var data = Delete(email);
+        $.ajax({
+            url: url_base + urlEnd,
+            type: 'POST',
+            data: data,
+            dataType: 'json',
+            headers: {
+                'Authentication': sessionStorage.getItem('token')
+            },
+            success: function(){
+                //console.log("borrado");
                 location.reload();
             },
 

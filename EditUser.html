@@ -7,6 +7,7 @@
         <link href="WebApp.css" rel="stylesheet">
 </head>
 <body>
+    <button type="button" id="buttonBack" style="background-image: url('clear.png')"></button>
         <div class="container">
 
                 <div class="row">
@@ -14,28 +15,24 @@
                   </div>
                   <div class="col-lg-6">
                         <h1 class="tituloCategoria">iFoodie</h1>
-                        <h2 class="tituloCategoria">Editar Usuario</h2>
-                        <div class="container">
+                        <div class="container" id="EditForm">
+                            <h2 class="tituloCategoria">Editar Usuario</h2>
                             <form role="form">
+                              <div class="form-group"> 
+                                <label for="nombre">Email:</label> <br>
+                                <input type="text"  id="email" readonly="readonly" class="EmailE"/>
+                              </div>
                               <div class="form-group"> 
                                 <label for="nombre">Ingrese su nombre:</label> <br>
                                 <input type="text" class="form-control" id="name">
                               </div>
                               <div class="form-group"> 
-                                    <label for="nombre">Ingrese su email:</label> <br>
-                                    <input type="text" class="form-control" id="email">
-                                </div>
-                                <div class="form-group"> 
-                                        <label for="nombre">Ingrese su nombre de susario:</label> <br>
-                                        <input type="text" class="form-control" id="user_name">
-                                      </div>     
+                                <label for="nombre">Ingrese su nombre de Usuario:</label> <br>
+                                <input type="text" class="form-control" id="user_name">
+                              </div>   
                               <div class="form-group"> 
-                                <label for="clave">Ingrese su password:</label>
-                                <input type="password" class="form-control" id="password">
-                              </div> 
-                              <div class="form-group"> 
-                                    <label for="clave">Ingrese una foto:</label>
-                                    <input type="file" class="form-control-file" id="photo">
+                                <label for="clave">Ingrese una foto:</label>
+                                <input type="file" class="form-control-file" id="photo">
                               </div> 
                               <button type="button" id="button">Enviar</button> 
                               

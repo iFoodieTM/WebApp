@@ -2,17 +2,18 @@
 <html lang="en">
 <head>
         <title>iFoodie</title> 
-        <link href="css/bootstrap.min.css" rel="stylesheet"> 
+        <link href="../css/bootstrap.min.css" rel="stylesheet"> 
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="WebApp.css" rel="stylesheet">
+        <link href="../WebApp.css" rel="stylesheet">
 </head>
 <body>
 
     <nav class="navbar navbar-expand-sm" id="barra">
-        <a href="#" class="navbar-brand"><img src=""></a>
+        <a href="../welcome.html" class="navbar-brand"><img src="../Fotos/logo_v4_mini.png"></a>
             <ul class="navbar-nav ml-auto">   
-                <li class="nav-item" id="navegacion"><a href="ShowUser.html" class="nav-link">Usuario</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Restaurantes</a></li>
+                <li class="nav-item" id="navegacion"><a href="../Usuarios/ShowUser.html" class="nav-link">Usuario</a></li>
+                <li class="nav-item"><a href="../Restaurants/ShowRestaurant.html" class="nav-link">Restaurantes</a></li>
+                <li class="nav-item"><a href="ShowAdmin.html" class="nav-link">Admin</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Recetas</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Categorias</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Comentarios</a></li>
@@ -23,7 +24,7 @@
                 <div class="row">
                   <div class="col-lg-12">
                         <h1 class="tituloCategoria">iFoodie</h1>
-                        <h2 class="tituloCategoria">Mostrar Ususarios</h2>
+                        <h2 class="tituloCategoria">Mostrar Administradores</h2>
                         <div id="search">
                         <span id="Lsearch"><strong>Buscar</strong></span><input placeholder="example@gmail.com" id="searchTerm" type="text" onkeyup="doSearch()" />
                       </div>
@@ -60,5 +61,5 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="./ShowUser.js" type="application/javascript"></script>
+<script src="./Admin.js" type="application/javascript"></script>
 </html>

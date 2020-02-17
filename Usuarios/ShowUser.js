@@ -11,7 +11,7 @@ $(document).ready(function()
     });
 
     $("#Add").click(function(){
-        location.href = "AddRestaurant.html";
+        location.href = "AddUser.html";
     })
     
 
@@ -24,7 +24,7 @@ document.onchange = function(){
 function Show() 
     {      
         $.ajax({
-            url: url_base + "/api/show_restaurant",
+            url: url_base + "/api/users/asd",
             type: 'GET',
             dataType: 'json',
             headers: {
@@ -38,7 +38,7 @@ function Show()
 
             error: function(response) {
                     alert("la informacion es incorrecta");
-                    console.log(response);
+                    console.log(response)
                  }
           });
     }
@@ -106,22 +106,6 @@ function Show()
             row.appendChild(column);
 
             var column = document.createElement('td');
-            var text = document.createTextNode(user.menu);            
-            column.setAttribute("value",user.menu);            
-            column.setAttribute("id","userMenu"+count);
-            column.appendChild(text);
-            //metemos la columna en la fila
-            row.appendChild(column);
-
-            var column = document.createElement('td');
-            var text = document.createTextNode(user.description);            
-            column.setAttribute("value",user.description);            
-            column.setAttribute("id","userDescription"+count);
-            column.appendChild(text);
-            //metemos la columna en la fila
-            row.appendChild(column);
-
-            var column = document.createElement('td');
              var text = document.createTextNode(user.banned);            
              column.setAttribute("value",user.banned);            
              column.setAttribute("id","userBan"+count);
@@ -182,19 +166,15 @@ function Show()
         var idUser_name = 'userUserName' + Editbutton.value;
         var idEmail = 'userEmail' + Editbutton.value;
         var idPhoto = 'userPhoto' + Editbutton.value;
-        var idMenu = 'userMenu' + Editbutton.value;
-        var idDescription = 'userDescription' + Editbutton.value;
 
         user.name = document.getElementById(idName).innerText;
         user.username = document.getElementById(idUser_name).innerText;
         user.email = document.getElementById(idEmail).innerText;
         user.photo = document.getElementById(idPhoto).innerText;
-        user.menu = document.getElementById(idMenu).innerText;
-        user.description = document.getElementById(idDescription).innerText;
         
         console.log(JSON.stringify(user));
         localStorage.setItem('user', JSON.stringify(user));
-        location.href = "EditRestaurant.html";
+        location.href = "EditUser.html";
     }
 
     function Delete(email) 

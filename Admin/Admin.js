@@ -11,7 +11,7 @@ $(document).ready(function()
     });
 
     $("#Add").click(function(){
-        location.href = "AddUser.html";
+        location.href = "AddAdmin.html";
     })
     
 
@@ -24,7 +24,7 @@ document.onchange = function(){
 function Show() 
     {      
         $.ajax({
-            url: url_base + "/api/users/asd",
+            url: url_base + "/api/show_admin",
             type: 'GET',
             dataType: 'json',
             headers: {
@@ -38,7 +38,7 @@ function Show()
 
             error: function(response) {
                     alert("la informacion es incorrecta");
-                    console.log(response)
+                    console.log(response);
                  }
           });
     }
@@ -129,9 +129,9 @@ function Show()
                 column4.setAttribute("class", "BannedId" + count);
                 column4.setAttribute('onclick', 'BanUser(this)');  
                 if(user.banned == 0) {
-                    column4.style.backgroundImage = 'url(ban.png)';
+                    column4.style.backgroundImage = 'url(../Fotos/ban.png)';
                 }  else {
-                    column4.style.backgroundImage = 'url(unban.png)';
+                    column4.style.backgroundImage = 'url(../Fotos/unban.png)';
                 }
 
             var column3 = document.createElement("button")
@@ -174,7 +174,7 @@ function Show()
         
         console.log(JSON.stringify(user));
         localStorage.setItem('user', JSON.stringify(user));
-        location.href = "EditUser.html";
+        location.href = "EditAdmin.html";
     }
 
     function Delete(email) 

@@ -9,10 +9,11 @@
 <body> 
 
         <nav class="navbar navbar-expand-sm" id="barra">
-                <a href="#" class="navbar-brand"><img src=""></a>
+                <a href="welcome.html" class="navbar-brand"><img src="Fotos/logo_v4_mini.png"></a>
                     <ul class="navbar-nav ml-auto">   
-                        <li class="nav-item" id="navegacion"><a href="ShowUser.html" class="nav-link">Usuario</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">Restaurantes</a></li>
+                        <li class="nav-item" id="navegacion"><a href="Usuarios/ShowUser.html" class="nav-link">Usuario</a></li>
+                        <li class="nav-item"><a href="Restaurants/ShowRestaurant.html" class="nav-link">Restaurantes</a></li>
+                        <li class="nav-item"><a href="Admin/ShowAdmin.html" class="nav-link">Admin</a></li>
                         <li class="nav-item"><a href="#" class="nav-link">Recetas</a></li>
                         <li class="nav-item"><a href="#" class="nav-link">Categorias</a></li>
                         <li class="nav-item"><a href="#" class="nav-link">Comentarios</a></li>
@@ -30,11 +31,35 @@
         </div>
 
         <div class="row">
-                <div class="col-lg-3"></div>
-                <img src="LogoMediano.png">
-                <div class="col-lg-4">
+                <div class="col-lg-1">
+                </div>
+                <div class="col-lg-3" id="users1">
+                <span>Usuarios:</span> <span id="Users">0</span> <br>
+                <span id="PorU">0</span><span>% of Users</span>
+                </div>
+                <div class="col-lg-3" id="users1">
+                <span>Restaurantes:</span> <span id="Rest">0</span> <br>
+                <span id="PorR">0</span><span>% of Restaurants</span>
+                </div>
+                <div class="col-lg-3" id="users1">
+                <span>Admin:</span> <span id="Adm">0</span> <br>
+                <span id="PorA">0</span><span>% of Admins</span>
                 </div>
         </div>
+
+        <div class="row">
+                        <div class="col-lg-1">
+                        </div>
+                        <div class="col-lg-3" id="users1">
+                        <span id="CreatedU">0</span> <span>Usuarios creados hoy</span>
+                        </div>
+                        <div class="col-lg-3" id="users1">
+                        <span id="CreatedR">0</span> <span>Restaurantes creados hoy</span>
+                        </div>
+                        <div class="col-lg-3" id="users1">
+                        <span id="CreatedA">0</span> <span>Admin creados hoy</span>
+                        </div>
+                </div>
     
     </div> 
 </body>

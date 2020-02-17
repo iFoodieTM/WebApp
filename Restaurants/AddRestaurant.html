@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+        <title>iFoodie</title> 
+        <link href="../css/bootstrap.min.css" rel="stylesheet"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../WebApp.css" rel="stylesheet">
+</head>
+<body>
+    <button type="button" id="buttonBack" style="background-image: url('../Fotos/clear.png')"></button>
+        <div class="container">
+
+                <div class="row">
+                  <div class="col-lg-3">
+                  </div>
+                  <div class="col-lg-6">
+                        <h1 class="tituloCategoria" id="RestTit">iFoodie</h1>
+                        <div class="container" id="AddForm">
+                          <h2 class="tituloCategoria">Crear Restaurantes</h2>
+                          <form role="form">
+                            <div class="form-group"> 
+                              <label for="nombre">Ingrese su email:</label> <br>
+                              <input type="text" class="form-control" id="email">
+                            </div>
+                            <div class="form-group"> 
+                              <label for="nombre">Ingrese su nombre de susario:</label> <br>
+                              <input type="text" class="form-control" id="user_name">
+                            </div>     
+                            <div class="form-group"> 
+                              <label for="clave">Ingrese su password:</label>
+                              <input type="password" class="form-control" id="password">
+                            </div> 
+                            <div class="form-group"> 
+                              <label for="clave">Ingrese su rol:</label>
+                              <input type="text" class="form-control" id="rol">
+                            </div> 
+                            <button type="button" id="button">Enviar</button> 
+                          </form>
+                        </div>
+                  </div>
+                  <div class="col-lg-4">
+                  </div>
+                </div>
+            
+              </div> 
+    
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="./AddRestaurant.js" type="application/javascript"></script>
+</html>

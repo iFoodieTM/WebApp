@@ -219,3 +219,8 @@ h3 {
    border-radius: 20px;
    margin-left: 10px;
 }
+
+ #Login {
+    font-size: 50px;
+    font-weight: bold;
+ }

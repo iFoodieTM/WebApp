@@ -3,7 +3,7 @@ var row;
 
 $(document).ready(function()
 {
-    url_base = "http://localhost:8888/Victor/ApiiFoodie/public/index.php";
+    url_base = "http://localhost:8888/Victor/APIiFoodie/public/index.php";
     
     $("#show").ready(function(){
              Show();

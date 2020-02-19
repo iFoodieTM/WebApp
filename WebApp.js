@@ -1,6 +1,6 @@
 $(document).ready(function()
 {
-    url_base = "http://localhost/ApiiFoodie/public/index.php";
+    url_base = "http://localhost:8888/Victor/ApiiFoodie/public/index.php";
 
     $("#Users").ready(function(){
         Show();   
@@ -38,21 +38,13 @@ $(document).ready(function()
         var data = get_user();
 
         $.ajax({
-            url: url_base + "/api/login",
+            url: url_base + "/api/login_admin",
             type: 'POST',
             data: data,
             dataType: 'json',
             success: function(response){
-                if (response.rol == 3) {
                 sessionStorage.setItem('token', response.token);
-                location.href = "welcome.html";
-                } else {
-                    document.getElementById('authorized').style.display = 'block';
-                    document.getElementById('emptyP').style.display = 'none';
-                    document.getElementById('empty').style.display = 'none';
-                    console.log(response.rol);
-                }
-                
+                location.href = "welcome.html";          
             },
 
             error: function() {
@@ -68,7 +60,13 @@ $(document).ready(function()
                     document.getElementById('empty').style.display = 'none';
                     document.getElementById('authorized').style.display = 'none';
                     alert("El email o la contraseña son incorrectos");
-                }             
+                }    
+                
+                if (greng) {
+                    document.getElementById('authorized').style.display = 'block';
+                    document.getElementById('emptyP').style.display = 'none';
+                    document.getElementById('empty').style.display = 'none';
+                }
             }
           });
     }
@@ -88,7 +86,12 @@ $(document).ready(function()
                 var rest = 0;
                 var admin = 0;
                 var hoy = new Date();
-                var Fhoy = hoy.getUTCFullYear() + "-" + "0" + (hoy.getMonth()+1) + "-" + hoy.getDate();
+                if ((hoy.getMonth()+1) < 10) {
+                    var Fhoy = hoy.getUTCFullYear() + "-" + "0" + (hoy.getMonth()+1) + "-" + hoy.getDate();
+                } else {
+                    var Fhoy = hoy.getUTCFullYear() + "-" + (hoy.getMonth()+1) + "-" + hoy.getDate();
+                }
+                
                 var Uhoy = 0;
                 var Rhoy = 0;
                 var Ahoy = 0;

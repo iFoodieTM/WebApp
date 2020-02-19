@@ -224,3 +224,15 @@ h3 {
     font-size: 50px;
     font-weight: bold;
  }
+
+ .buscar {
+    margin-top: -10px!important;
+ }
+
+ .ShowR {
+    margin-top: 50px;
+ }
+
+ #errorC {
+    color: red;
+ }

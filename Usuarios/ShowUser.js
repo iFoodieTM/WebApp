@@ -3,7 +3,7 @@ var row;
 
 $(document).ready(function()
 {
-    url_base = "http://localhost:8888/APIiFoodie/public/index.php";
+    url_base = "http://localhost:8888/Victor/APIiFoodie/public/index.php";
     
     $("#show").ready(function(){
              Show();
@@ -24,15 +24,15 @@ document.onchange = function(){
 function Show() 
     {      
         $.ajax({
-            url: url_base + "/api/users/asd",
+            url: url_base + "/api/show_users",
             type: 'GET',
             dataType: 'json',
             headers: {
                 'Authentication': sessionStorage.getItem('token')
             },
             
-            success: function(response){
-                //console.log(response);
+            success: function(response, Response){
+                console.log(Response.status);
                 createTable(response);
             },
 
@@ -196,7 +196,7 @@ function Show()
         console.log(email);
         var data = Delete(email);
         $.ajax({
-            url: url_base + "/api/delete",
+            url: url_base + "/api/users/sye",
             type: 'DELETE',
             data: data,
             dataType: 'json',

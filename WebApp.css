@@ -28,7 +28,7 @@ body {
    margin-bottom: -8px!important;
 }
 
-#authorized, #empty, #emptyP {
+#authorized, #empty, #emptyP, #emptyE, #emptyU, #existE, #existU, #invalidE {
    color: red;
 }
 

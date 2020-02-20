@@ -47,22 +47,23 @@ $(document).ready(function()
                 location.href = "welcome.html";          
             },
 
-            error: function() {
-                if ($('#email').val().length == 0) {
+            error: function(Response) {
+                if ($('#email').val().length == 0 && $('#password').val().length != 0) {
+                    document.getElementById('empty').style.display = 'block';
+                    document.getElementById('emptyP').style.display = 'none';
+                }
+                
+                if ($('#password').val().length == 0 && $('#email').val().length != 0){
+                    document.getElementById('emptyP').style.display = 'block';
+                    document.getElementById('empty').style.display = 'none';
+                }
+                
+                if($('#password').val().length == 0 && $('#email').val().length == 0) {
+                    document.getElementById('emptyP').style.display = 'block';
                     document.getElementById('empty').style.display = 'block';
                 }
                 
-                if ($('#password').val().length == 0){
-                    document.getElementById('emptyP').style.display = 'block';
-                } 
-                if($('#email').val().length != 0 && $('#password').val().length != 0) {
-                    document.getElementById('emptyP').style.display = 'none';
-                    document.getElementById('empty').style.display = 'none';
-                    document.getElementById('authorized').style.display = 'none';
-                    alert("El email o la contraseña son incorrectos");
-                }    
-                
-                if (greng) {
+                if ($('#email').val().length != 0 && $('#password').val().length != 0 && Response.status == 401) {
                     document.getElementById('authorized').style.display = 'block';
                     document.getElementById('emptyP').style.display = 'none';
                     document.getElementById('empty').style.display = 'none';

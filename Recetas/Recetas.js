@@ -19,7 +19,7 @@ document.onchange = function(){
 function Show() 
     {      
         $.ajax({
-            url: url_base + "/api/show_restaurant",
+            url: url_base + "/api/recipes/sd",
             type: 'GET',
             dataType: 'json',
             headers: {
@@ -48,8 +48,8 @@ function Show()
             //creamos la columna
             //columna id
             var column = document.createElement('td');
-            var text = document.createTextNode(user.id);            
-            column.setAttribute("value",user.id);            
+            var text = document.createTextNode(user.name);            
+            column.setAttribute("value",user.name);            
             column.setAttribute("id","userId"+count);
             column.appendChild(text);
             //metemos la columna en la fila
@@ -57,8 +57,8 @@ function Show()
 
             //columna name
             var column = document.createElement('td');
-            var text = document.createTextNode(user.name);            
-            column.setAttribute("value",user.name);            
+            var text = document.createTextNode(user.time);            
+            column.setAttribute("value",user.time);            
             column.setAttribute("id","userName"+count);
             column.appendChild(text);
             //metemos la columna en la fila
@@ -66,8 +66,8 @@ function Show()
 
             //columna user name
             var column = document.createElement('td');
-            var text = document.createTextNode(user.user_name);            
-            column.setAttribute("value",user.user_name);            
+            var text = document.createTextNode(user.rating);            
+            column.setAttribute("value",user.rating);            
             column.setAttribute("id","userUserName"+count);
             column.appendChild(text);
             //metemos la columna en la fila
@@ -75,8 +75,8 @@ function Show()
 
             //columna email
             var column = document.createElement('td');
-            var text = document.createTextNode(user.email);           
-            column.setAttribute("value",user.email);            
+            var text = document.createTextNode(user.difficulty);           
+            column.setAttribute("value",user.difficulty);            
             column.setAttribute("id","userEmail" + count);
             column.appendChild(text);
             //metemos la columna en la fila
@@ -84,8 +84,8 @@ function Show()
 
              //columna photo
              var column = document.createElement('td');
-             var text = document.createTextNode(user.rol);            
-             column.setAttribute("value",user.rol);            
+             var text = document.createTextNode(user.video);            
+             column.setAttribute("value",user.video);            
              column.setAttribute("id","userRol"+count);
              column.appendChild(text);
              //metemos la columna en la fila
@@ -101,16 +101,16 @@ function Show()
             row.appendChild(column);
 
             var column = document.createElement('td');
-            var text = document.createTextNode(user.menu);            
-            column.setAttribute("value",user.menu);            
+            var text = document.createTextNode(user.description);            
+            column.setAttribute("value",user.description);            
             column.setAttribute("id","userMenu"+count);
             column.appendChild(text);
             //metemos la columna en la fila
             row.appendChild(column);
 
             var column = document.createElement('td');
-            var text = document.createTextNode(user.description);            
-            column.setAttribute("value",user.description);            
+            var text = document.createTextNode(user.user_id);            
+            column.setAttribute("value",user.user_id);            
             column.setAttribute("id","userDescription"+count);
             column.appendChild(text);
             //metemos la columna en la fila

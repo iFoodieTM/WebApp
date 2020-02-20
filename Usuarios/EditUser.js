@@ -64,7 +64,12 @@ function UpdateUser()
             },
 
             error: function() {
-                console.log("mal");          
+                console.log("mal"); 
+                if(Response.status == 400){
+                    document.getElementById('existU').style.display = 'block';
+                } else {
+                    document.getElementById('existU').style.display = 'none';
+                }         
             }
           });
     }

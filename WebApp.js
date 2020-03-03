@@ -1,6 +1,6 @@
 $(document).ready(function()
 {
-    url_base = "http://localhost:8888/Victor/ApiiFoodie/public/index.php";
+    url_base = "http://localhost:8888/Rick/iFoodieapi/public/index.php";
 
     $("#Users").ready(function(){
         Show();   
@@ -102,9 +102,9 @@ $(document).ready(function()
                 var UserB = 0;
                 var RestB = 0;
                 var AdminB = 0;
-                console.log(response.Success.length);
+                console.log(response);
 
-                response.Success.forEach(user => {
+                response.forEach(user => {
                     if(user.rol == 1) {
                         users ++;
                         Uhoy = user.created_at ;
@@ -148,21 +148,21 @@ $(document).ready(function()
                         }
                     }
                 });
-                var PorcentajeUsers = (users * 100)/response.Success.length;
+                var PorcentajeUsers = (users * 100)/response.length;
                 var Porcetanje1 = PorcentajeUsers.toFixed(3);
                 document.getElementById("PorU").innerText = Porcetanje1;
                 document.getElementById("Users").innerText = users;
                 document.getElementById("CreatedU").innerText = UsT;
                 document.getElementById("BanU").innerText = UserB;
 
-                var PorcentajeRest = (rest * 100)/ response.Success.length;
+                var PorcentajeRest = (rest * 100)/ response.length;
                 var Porcetanje2 = PorcentajeRest.toFixed(1);
                 document.getElementById("PorR").innerText = Porcetanje2;
                 document.getElementById("Rest").innerText = rest;
                 document.getElementById("CreatedR").innerText = RsT;
                 document.getElementById("BanR").innerText = RestB;
 
-                var PorcentajeAdmin = (admin * 100)/ response.Success.length;
+                var PorcentajeAdmin = (admin * 100)/ response.length;
                 var Porcetanje3 = PorcentajeAdmin.toFixed(3);
                 document.getElementById("PorA").innerText = Porcetanje3;
                 document.getElementById("Adm").innerText = admin;

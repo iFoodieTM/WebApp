@@ -1,6 +1,6 @@
 $(document).ready(function()
 {
-    url_base = "http://localhost:8888/Victor/APIiFoodie/public/index.php";
+    url_base = "http://localhost:8888/Rick/iFoodie/public/index.php";
 
     $("#buttonBack").click(function(){
         goBack();

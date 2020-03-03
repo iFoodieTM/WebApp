@@ -3,7 +3,7 @@ var row;
 
 $(document).ready(function()
 {
-    url_base = "http://localhost:8888/Victor/APIiFoodie/public/index.php";
+    url_base = "http://localhost:8888/Rick/iFoodieApi/public/index.php";
     
     $("#show").ready(function(){
              Show();
@@ -45,7 +45,7 @@ function Show()
 
     function createTable(response){
   
-        response.Success.forEach(user => {
+        response.forEach(user => {
             console.log(user);
             //creamos la fila
             row = document.createElement("tr")

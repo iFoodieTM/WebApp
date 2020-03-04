@@ -1,6 +1,6 @@
 $(document).ready(function()
 {
-    url_base = "http://localhost:8888/Rick/iFoodieapi/public/index.php";
+    url_base = "3.93.176.22";
 
     $("#Users").ready(function(){
         Show();   

@@ -1,8 +1,9 @@
 $(document).ready(function()
 {
-    url_base = "3.93.176.22";
+    url_base = "http://3.93.176.22";
 
     $("#Users").ready(function(){
+        console.log('users');
         Show();   
     });
 
@@ -36,7 +37,7 @@ $(document).ready(function()
     function login() 
     {
         var data = get_user();
-
+        console.log(url_base + "/api/login_admin");
         $.ajax({
             url: url_base + "/api/login_admin",
             type: 'POST',
@@ -74,7 +75,9 @@ $(document).ready(function()
 
     function Show() 
     {     
+        console.log(url_base + "/api/login_admin");
         $.ajax({
+            
             url: url_base + "/api/users/wef",
             type: 'GET',
             dataType: 'json',

@@ -1,6 +1,6 @@
 $(document).ready(function()
 {
-    url_base = "3.93.176.22";
+    url_base = "http://3.93.176.22";
     
     $("#show").ready(function(){
              getUser();

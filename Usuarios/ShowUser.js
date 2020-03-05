@@ -3,7 +3,7 @@ var row;
 
 $(document).ready(function()
 {
-    url_base = "http://3.93.176.22";
+    url_base = "http://34.204.47.162";
     
     $("#show").ready(function(){
              Show();

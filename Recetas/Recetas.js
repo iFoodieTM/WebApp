@@ -3,7 +3,7 @@ var row;
 
 $(document).ready(function()
 {
-    url_base = "http://3.93.176.22";
+    url_base = "http://34.204.47.162";
     
     $("#show").ready(function(){
              Show();
@@ -19,7 +19,7 @@ document.onchange = function(){
 function Show() 
     {      
         $.ajax({
-            url: url_base + "/api/recipes/sd",
+            url: url_base + "/api/showAll",
             type: 'GET',
             dataType: 'json',
             headers: {
